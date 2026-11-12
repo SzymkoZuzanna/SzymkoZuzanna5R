@@ -1,29 +1,26 @@
 import React from 'react';
 
-export default function Header({ isDarkMode, onToggleTheme }) {
+export default function Header({ ciemnyMotyw, przelaczMotyw }) {
   return (
-    <nav className="navbar pv-nav py-3">
-      <a className="navbar-brand pv-brand mb-0" href="#">
+    <header className="py-3 mb-4 pv-nav d-flex justify-content-between align-items-center">
+      <a href="#" className="text-decoration-none pv-brand text-body">
         hamasuke<span className="pv-sticker">.pl</span>
       </a>
-      <span className="navbar-text d-none d-md-inline me-auto ms-3 small">
-        portal o grach komputerowych
-      </span>
 
-      {/* Przełącznik jasny/ciemny: form-switch z Bootstrapa */}
-      <div className="form-check form-switch mb-0">
+      <div className="form-check form-switch m-0 d-flex align-items-center gap-2">
         <input
           className="form-check-input"
           type="checkbox"
           role="switch"
           id="themeSwitch"
-          checked={isDarkMode}
-          onChange={onToggleTheme}
+          checked={!ciemnyMotyw}
+          onChange={przelaczMotyw}
+          aria-label="Przełącz tryb jasny/ciemny"
         />
-        <label className="form-check-label fw-bold" htmlFor="themeSwitch">
-          {isDarkMode ? 'Ciemny' : 'Jasny'}
+        <label className="form-check-label small fw-bold" htmlFor="themeSwitch">
+          {ciemnyMotyw ? 'Ciemny' : 'Jasny'}
         </label>
       </div>
-    </nav>
+    </header>
   );
 }
