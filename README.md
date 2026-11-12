@@ -1,0 +1,24 @@
+hamasuke.pl - nazwa zaczerpnięta od hamasuke z overlorda. 
+
+
+
+Czego użyłam w kodzie:
+
+Komponenty Reacta – podzieliłam stronę na mniejsze elementy (np. 'Header', 'Card', 'SearchBar', 'ButtonMsg'), żeby kod był uporządkowany.
+
+
+Stan aplikacji ('useState' – do obsługi wyszukiwarki (filtrowanie gier na bieżąco), rozwijania szczegółów kart, personalizacji imienia oraz przełączania motywu.
+
+
+Efekty i cykl życia ('useEffect')– do automatycznego zapisywania i zmieniania atrybutu 'data-bs-theme' dla jasnego/ciemnego trybu.
+
+
+Przeglądarkowe API ('localStorage' i 'window.prompt') – do pamiętania wybranego przez użytkownika imienia oraz motywu po odświeżeniu strony.
+
+
+Bootstrap 5 i własny CSS– siatki, responsywność oraz własne style (karty, zmienne CSS dla kolorów, cienie).
+
+Google Fonts – czcionka Fredoka do nagłówków.
+
+
+Autor: Zuzanna Szymko, klasa 5R

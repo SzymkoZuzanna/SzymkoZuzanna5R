@@ -1,0 +1,130 @@
+/* kolory: jasny motyw */
+[data-bs-theme='light'] {
+  --bs-body-bg: #f6f1e7;
+  --bs-body-color: #16161a;
+  --bs-secondary-color: #4a4a55;
+  --bs-border-color: #16161a;
+  --ink: #16161a;
+  --card: #ffffff;
+  --pop: #e0a96d;
+  --shadow: #16161a;
+}
+
+/* kolory: ciemny motyw */
+[data-bs-theme='dark'] {
+  --bs-body-bg: #17171c;
+  --bs-body-color: #f4eedb;
+  --bs-secondary-color: #a8a496;
+  --bs-border-color: #f4eedb;
+  --ink: #f4eedb;
+  --card: #23232b;
+  --pop: #e0a96d;
+  --shadow: #e0a96d;
+}
+
+body { transition: background 0.2s ease, color 0.2s ease; }
+.pv-container { position: relative; z-index: 1; max-width: 1000px; }
+.pv-display { font-family: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif; font-weight: 700; }
+.pv-title { font-size: clamp(2.2rem, 5.5vw, 3.4rem); line-height: 1.1; }
+
+/* podkreślenie w nagłówku - nie rozrywa się przy łamaniu linii */
+.pv-underline {
+  color: var(--pop);
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 6px;
+}
+
+/* zakreślenie dla powitania użytkownika */
+.pv-mark {
+  background: var(--pop); color: #16161a;
+  padding: 0 0.25em; border-radius: 4px;
+}
+
+.pv-sticker {
+  display: inline-block; margin-left: 2px; padding: 0 8px;
+  background: var(--pop); color: #16161a;
+  border: 3px solid var(--ink); border-radius: 8px;
+  transform: rotate(-4deg);
+}
+
+/* górny pasek i przełącznik */
+.pv-nav { border-bottom: 3px solid var(--ink); }
+.pv-brand { font-family: 'Fredoka', 'Trebuchet MS', sans-serif; font-weight: 700; font-size: 1.9rem; }
+.form-check-input { width: 2.6em; height: 1.4em; border: 3px solid var(--ink); background-color: var(--card); }
+.form-check-input:checked { background-color: var(--pop); border-color: var(--ink); }
+.form-check-input:focus { box-shadow: none; border-color: var(--ink); }
+
+/* przyciski */
+.btn-pop {
+  background: var(--pop); color: #16161a; font-weight: 700;
+  border: 3px solid var(--ink); border-radius: 10px;
+  box-shadow: 3px 3px 0 var(--shadow);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn-pop:hover, .btn-pop:focus {
+  background: var(--pop); color: #16161a; border-color: var(--ink);
+  transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--shadow);
+}
+
+/* pole z ciekawostką dnia */
+.pv-fact {
+  background: var(--pop); color: #16161a;
+  border: 3px solid var(--ink); border-radius: 12px;
+  box-shadow: 5px 5px 0 var(--shadow);
+  padding: 14px 18px; transform: rotate(-0.6deg);
+}
+
+/* kafelki ze statystykami */
+.pv-info {
+  background: var(--card); color: var(--bs-body-color);
+  border: 3px solid var(--ink); border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+.pv-info-number { font-size: 2.2rem; line-height: 1.1; }
+
+/* wyszukiwarka */
+.pv-search {
+  border: 3px solid var(--ink); border-radius: 12px; overflow: hidden;
+  box-shadow: 4px 4px 0 var(--shadow); flex-wrap: nowrap;
+}
+.pv-search > * { border: 0; border-radius: 0 !important; }
+.pv-search .form-control { background: var(--card); color: var(--bs-body-color); }
+.pv-search .form-control:focus { box-shadow: none; background: var(--card); color: var(--bs-body-color); }
+.pv-clear { background: var(--card); color: var(--bs-body-color); border-left: 3px solid var(--ink) !important; font-weight: 600; }
+
+/* karty, po najechaniu się unoszą */
+.pv-card {
+  background: var(--card); color: var(--bs-body-color);
+  border: 3px solid var(--ink); border-radius: 14px;
+  box-shadow: 6px 6px 0 var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.pv-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0 var(--shadow);
+  background-color: color-mix(in srgb, var(--card) 85%, var(--pop) 15%);
+}
+.pv-card .card-footer { background: transparent; border-top: 3px solid var(--ink); }
+.pv-more { border-top: 2px dashed var(--ink); }
+.pv-badge {
+  color: #16161a !important; border: 2px solid var(--ink);
+  border-radius: 999px; font-weight: 700; padding: 5px 12px;
+}
+
+/* kolory kategorii - manga ma ładną zieleń, a komiks błękit */
+.g-manga { background-color: #52b788 !important; }   
+.g-komiks { background-color: #73a6c0 !important; }  
+
+/* brak wyników i stopka */
+.pv-empty { border: 3px dashed var(--ink); border-radius: 14px; }
+.pv-footer { border-top: 3px solid var(--ink); }
+
+/* banery po bokach strony */
+.pv-banner {
+  position: fixed; top: 0; bottom: 0; z-index: 0;
+  width: calc((100vw - 1000px) / 2);
+}
+.pv-banner-left { left: 0; border-right: 3px solid var(--ink); }
+.pv-banner-right { right: 0; border-left: 3px solid var(--ink); }
+.pv-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
